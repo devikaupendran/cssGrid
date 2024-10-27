@@ -1,0 +1,165 @@
+/* reset  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    font-family: 'Open Sans' , sans-serif;
+    font-size: 16px;
+    color:black;
+    line-height: 26px;
+}
+
+/* css starts  */
+.container{
+    width:100%;
+    height: 100vh;
+    margin: 0px auto;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1.2fr;
+    grid-template-rows: 1fr 4fr 1.2fr 1.2fr;
+    grid-template-areas:    "logo    logo    header"
+                            "main    main    img-box"
+                            "quotes  quotes  img-box"
+                            "btn1    btn2    img-box";
+}
+.logo{
+    grid-area: logo;
+    background-color: #E6F0EF;
+    display: flex;
+    align-items: center;
+    padding-left: 125px;
+}
+.logo a{
+    color: #0A7B34;
+    font-size: 24px;
+    font-weight: 700;
+}
+.main{
+    grid-area: main;
+    background-color: white;
+    padding: 0 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.main h1{
+    font-size: 32px;
+    line-height: 42px;
+    font-weight: 700;
+    max-width: 270px;
+}
+.quotes{
+    grid-area: quotes;
+    background-color: #E6F0EF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quotes h2{
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 33px;  
+    
+}
+.btn{
+    font-size: 20px;
+    line-height: 33px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.btn1{
+    grid-area: btn1;
+    background-color: #0F792D;
+
+}
+.btn2{
+    grid-area: btn2;
+    background-color: #5FB144;
+}
+header{
+    grid-area: header;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 30px;
+}
+header ul li a{
+    color:black;
+
+}
+header ul{
+    display: flex;
+}
+header ul li{
+    padding: 30px 15px;
+}
+
+.img-box{
+    grid-area: img-box;
+    background: url('/images/image3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.img-box img{
+ width:100%;   
+}
+
+/* media query  */
+@media (max-width : 896px){
+    .container{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:    "logo     logo"
+                                "header   header"
+                                "img-box  img-box"
+                                "main     main"
+                                "quotes   quotes"
+                                "btn1     btn2";
+        grid-template-rows: 100px 50px 50vh auto auto 70px;
+    }
+    .logo{
+        padding-left: 0;
+        justify-content: center;
+    }
+    .main{
+        padding: 50px 29px;
+    }
+    .main h1{
+        font-size: 30px;
+        margin-bottom: 14px;
+        line-height: 40px;
+    }
+    .quotes{
+        padding: 15px 24px;
+    }
+    .quotes h2{
+        font-size: 20px;
+        line-height: 28px;
+    }
+    header{
+        padding-right: 0;
+        background: #cddcda;
+    }
+    .btn a{
+        font-size: 18px;
+    }
+    header ul li a{
+        padding: 30px 25px;
+    }
+}
+@media(min-width : 896px) and (max-width: 1080px){
+    .main{
+        padding: 30px 40px
+    }
+    .quotes{
+        padding:23px    
+    }
+}
